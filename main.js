@@ -8,9 +8,9 @@ import bodyParser from 'body-parser';
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-// import mongoose from 'mongoose';
-// mongoose.connect('', { useMongoClient: true });
-// mongoose.Promise = global.Promise;
+import mongoose from 'mongoose';
+mongoose.connect('mongodb://jhy5317:mobile5317@ds123896.mlab.com:23896/2018miro', { useMongoClient: true });
+mongoose.Promise = global.Promise;
 
 import routes from './routes';
 app.use('/api', routes);

@@ -12,6 +12,10 @@ var _bodyParser = require('body-parser');
 
 var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
+var _mongoose = require('mongoose');
+
+var _mongoose2 = _interopRequireDefault(_mongoose);
+
 var _routes = require('./routes');
 
 var _routes2 = _interopRequireDefault(_routes);
@@ -25,9 +29,8 @@ app.use(_express2.default.static(__dirname + '/../public'));
 app.use(_bodyParser2.default.json());
 app.use(_bodyParser2.default.urlencoded({ extended: false }));
 
-// import mongoose from 'mongoose';
-// mongoose.connect('', { useMongoClient: true });
-// mongoose.Promise = global.Promise;
+_mongoose2.default.connect('mongodb://jhy5317:mobile5317@ds123896.mlab.com:23896/2018miro', { useMongoClient: true });
+_mongoose2.default.Promise = global.Promise;
 
 app.use('/api', _routes2.default);
 
